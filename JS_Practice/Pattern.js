@@ -159,20 +159,24 @@
 // }
 
 //--------------11-----------Hollow Diamond pattern 
-let numberOfRowInput = 8
-let n = (numberOfRowInput-1)*2; //number Of Star In Last Row
+// let numberOfRowInput = 8
+// let n = (numberOfRowInput-1)*2; //number Of Star In Last Row
 
-let col = Math.floor((n/2)+1);
-let row = (Math.floor((n/2))*2)+1;
+// let col = Math.floor((n/2)+1);
+// let row = (Math.floor((n/2))*2)+1;
 
-for(let i=col; i>=1; i--){
+// for(let i=col; i>=1; i--){
     
-    for(let j=1;j<=row/2;j++){
-        if((j == (col+(i-1)) || j == (col-(i-1))) || i === col){
-            process.stdout.write("* "); 
-        } else {
-            process.stdout.write("  "); 
-        }
-    }
-    console.log()
-}
+//     for(let j=1;j<=row/2;j++){
+//         if((j == (col+(i-1)) || j == (col-(i-1))) || i === col){
+//             process.stdout.write("* "); 
+//         } else {
+//             process.stdout.write("  "); 
+//         }
+//     }
+//     console.log()
+// }
+
+let str = "10 +   2 *    (   6 - (4 + 1) / 2) + 7";
+let ans = Number(str);
+console.log(ans);

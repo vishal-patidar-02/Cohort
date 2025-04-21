@@ -17,6 +17,69 @@
   - `npm run test-calculator`
 */
 
-class Calculator {}
+class Calculator {
+  constructor(result = 0) {
+    this.result = result;
+  }
+
+  add(x) {
+    this.result += x;
+  }
+  subtract(x) {
+    this.result -= x;
+  }
+  multiply(x) {
+    this.result = this.result * x;
+  }
+  divide(x) {
+    if (x === 0) {
+      throw new Error();
+    }
+    this.result = this.result / x;
+  }
+  clear() {
+    this.result = 0;
+  }
+  getResult() {
+    return this.result;
+  }
+  calculate(str) {
+    str = str.trim();
+    for (let i = 0; i <= str.length - 1; i++) {
+      const ch = str[i];
+      if (
+        !(ch >= "0" && ch <= "9") &&
+        ch !== " " &&
+        ch !== ")" &&
+        ch !== "(" &&
+        ch !== "*" &&
+        ch !== "/" &&
+        ch !== "+" &&
+        ch !== "-" &&
+        ch !== "."
+      ) {
+        throw new Error(`Invalid character "${ch}" at index ${i}`);
+      }
+    }
+    try {
+      let ans = eval(str);
+      if(ans === Infinity){
+        throw new Error();
+      }
+      this.result = eval(str);
+    } catch (error) {
+      throw error;
+    }
+  }
+}
+
+const cal = new Calculator();
+cal.add(5);
+cal.add(10);
+cal.subtract(2);
+console.log(cal.getResult());
+cal.clear();
+cal.calculate("10 /11");
+console.log(cal.getResult());
 
 module.exports = Calculator;
