@@ -3,6 +3,12 @@
  * During this time the thread should not be able to do anything else.
  */
 
-function sleep (seconds) {
+function sleep (ms) {
+    const start =  Date.now();
+    while((Date.now()-start) < ms ){
 
+    }
+    console.log(`This is happend after ${Date.now()-start} Seconds`)
 }
+
+sleep(5000)
